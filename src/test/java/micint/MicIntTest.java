@@ -1,6 +1,7 @@
 package micint;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -9,21 +10,26 @@ import org.junit.jupiter.api.Test;
 public class MicIntTest {
     private MicInt sut;
 
+    @BeforeEach
+    public void initTest(){
+        // assign
+        sut = new MicInt(3);
+    }
+
     @Test
     public void testConstructor(){
         // assign
-        sut = new MicInt(3);
+        sut = new MicInt(20);
 
         // act
 
         // assert
-        Assertions.assertEquals(3, sut.get());
+        Assertions.assertEquals(20, sut.get());
     }
 
     @Test
     public void testInc(){
-        // assign
-        sut = new MicInt(3);
+
 
         // act
         sut.inc();
@@ -34,8 +40,7 @@ public class MicIntTest {
 
     @Test
     public void testIncWithPositiveValue(){
-        // assign
-        sut = new MicInt(3);
+
 
         // act
         sut.inc(2);
@@ -46,8 +51,7 @@ public class MicIntTest {
     }
 
     @Test    public void testIncWithNegativeValue(){
-        // assign
-        sut = new MicInt(3);
+
 
         // act
         sut.inc(-2);
