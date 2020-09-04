@@ -1,5 +1,7 @@
 package micint;
 
+import exceptions.DivideByZeroException;
+
 /**
  * Created by Michel Koolwaaij on 01-09-20.
  */
@@ -9,6 +11,7 @@ public class MicInt {
     public MicInt(int i) {
         this.getal = i;
     }
+
 
     public void inc() {
         getal++;
@@ -20,5 +23,12 @@ public class MicInt {
 
     public void inc(int i) {
         getal = getal + i;
+    }
+
+    public void div(int i) throws DivideByZeroException {
+        if (i==0){
+            throw new DivideByZeroException();
+        }
+        getal = getal / i;
     }
 }

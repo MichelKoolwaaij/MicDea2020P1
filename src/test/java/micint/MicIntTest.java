@@ -1,5 +1,6 @@
 package micint;
 
+import exceptions.DivideByZeroException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,6 +60,25 @@ public class MicIntTest {
         // assert
         Assertions.assertEquals(1, sut.get());
 
+    }
+
+    @Test
+    public void testDivWithPositiveValue() throws DivideByZeroException {
+
+        // act
+        sut.div(3);
+
+        // assert
+        Assertions.assertEquals(1, sut.get());
+    }
+
+    @Test
+    public void testDivWithZero(){
+
+        // Act & Assert
+        Assertions.assertThrows(DivideByZeroException.class, () -> {
+            sut.div(0);
+        });
     }
 
 }
