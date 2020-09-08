@@ -1,3 +1,4 @@
+import beerdrinking.Party;
 import exceptions.DivideByZeroException;
 import micint.MicInt;
 
@@ -12,15 +13,10 @@ public class App {
 
     private void start()  {
         System.out.println("Welkom in de wereld van DEA");
-        MicInt micInt = new MicInt(8);
+        var micInt = new MicInt(0);
 
-        micInt.inc(3);
-        try {
-            micInt.div(0);
-        } catch (DivideByZeroException e) {
-            e.printStackTrace();
-            micInt.inc();
-        }
+        Party party = new Party();
+        party.startParty();
 
         System.out.println(micInt.get());
     }
