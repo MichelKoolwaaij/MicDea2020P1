@@ -1,4 +1,5 @@
 import beerdrinking.Party;
+import beerdrinking.ThreadingParty;
 import exceptions.DivideByZeroException;
 import micint.MicInt;
 import micint.MicIntRunnable;
@@ -27,12 +28,21 @@ public class App {
         // party.startParty();
 
         /** Multithreading demo
+         * with MicIntRunnable, lambda expression and a stream
+         * uncomment to run demo
          *
          */
 
-        IntStream intstream = IntStream.range(0, MAXTHREADS+1);
+        // IntStream intstream = IntStream.range(0, MAXTHREADS+1);
+        // intstream.forEach(i -> new Thread( new MicIntRunnable(micInt)).start());
 
-        intstream.forEach(i -> new Thread( new MicIntRunnable(micInt)).start());
+        /** MultiThreading demo
+         * with Beerdrinker
+         * uncomment to run demo
+         */
+
+        ThreadingParty party = new ThreadingParty();
+        party.startParty();
 
         System.out.println(micInt.get());
     }
