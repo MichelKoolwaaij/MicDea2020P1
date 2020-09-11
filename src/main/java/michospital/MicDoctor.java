@@ -25,7 +25,7 @@ public class MicDoctor {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    
+
 
     public void setNrOfBeds(int nrOfBeds) {
         micDepartement.setNrOfBeds(nrOfBeds);
@@ -40,6 +40,10 @@ public class MicDoctor {
         if (micDepartement.deservesBonus())
             return salary * 1.10;
         return salary;
+    }
+
+    public void halveSalary(){
+
     }
 
 }

@@ -21,7 +21,7 @@ public class MicInt {
         return value;
     }
 
-    public void inc(int i) {
+    public synchronized void inc(int i) {
         value = value + i;
     }
 
