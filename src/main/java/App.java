@@ -1,6 +1,7 @@
 import beerdrinking.Party;
 import beerdrinking.ThreadingParty;
 import exceptions.DivideByZeroException;
+import http.MicHTTPServer;
 import micint.MicInt;
 import micint.MicIntRunnable;
 
@@ -33,16 +34,22 @@ public class App {
          *
          */
 
-        // IntStream intstream = IntStream.range(0, MAXTHREADS+1);
-        // intstream.forEach(i -> new Thread( new MicIntRunnable(micInt)).start());
+        //IntStream intstream = IntStream.range(0, MAXTHREADS+1);
+        //intstream.forEach(i -> new Thread( new MicIntRunnable(micInt)).start());
 
         /** MultiThreading demo
          * with Beerdrinker
          * uncomment to run demo
          */
+        // ThreadingParty party = new ThreadingParty();
+        // party.startParty();
 
-        ThreadingParty party = new ThreadingParty();
-        party.startParty();
+        /** HTTP Server demo
+         *
+         *
+         */
+        var httpServer = new MicHTTPServer(8384);
+        httpServer.startServer();
 
         System.out.println(micInt.get());
     }
