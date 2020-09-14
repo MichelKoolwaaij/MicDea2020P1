@@ -27,7 +27,6 @@ public class ConnectionHandler {
 
     public ConnectionHandler(Socket socket) {
         this.socket = socket;
-        handle();
     }
 
     public void handle() {
